@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // Components
@@ -65,10 +64,8 @@ function App() {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-charcoal-200 border-t-charcoal-800 rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -78,7 +75,7 @@ function App() {
       <Router>
         <div className="App">
           {user && <Navbar />}
-          <main className={user ? 'main-content' : ''}>
+          <main className={user ? 'pt-32' : ''}>
             <Routes>
               {/* Public Routes */}
               <Route 
